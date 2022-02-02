@@ -5,7 +5,7 @@ import { ITask } from './interfaces';
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
-  const [deadline, setDeadline] = useState<string>("0");
+  const [deadline, setDeadline] = useState<string>("");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
