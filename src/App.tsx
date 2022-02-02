@@ -5,14 +5,14 @@ import { ITask } from './interfaces';
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
-  const [deadline, setDeadline] = useState<number>(0);
+  const [deadline, setDeadline] = useState<string>("0");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target.name === "task"){
       setTask(event.target.value);
     }else{
-      setDeadline(Number(event.target.value));
+      setDeadline(event.target.value);
     }
   };
 
@@ -20,7 +20,7 @@ const App: FC = () => {
     const newTask = { taskName: task, deadline: deadline }
     setTodoList([...todoList, newTask]);
     setTask("");
-    setDeadline(0);
+    setDeadline("");
   };
 
   const completeTask = (taskNameToDelete: string):void => {
@@ -42,7 +42,7 @@ const App: FC = () => {
           />
           <input 
             type="number" 
-            placeholder="Deadline in days"
+            placeholder="Deadline in hours"
             onChange={handleChange} 
             name="deadline"
             value={deadline}
