@@ -1,5 +1,6 @@
 # TodoList
-This is a simple project to do your todolist with React and TypeScript.
+This is a simple project to do your todolist with React and TypeScript.\
+live version https://todolistbycath.netlify.app/
 
 ## Getting Started with Create React App TypeScript
 
